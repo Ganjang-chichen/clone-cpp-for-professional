@@ -5,7 +5,7 @@
 
 ## 목차
 
-[1.1 Hello, World](#hello-world!)
+[1.1 Hello, World](#hello-world)
 
 [1.2 전처리에 대하여](#전처리에-대하여)
 
@@ -19,7 +19,7 @@
 ***
 
 ## 1.1
-## Hello World!
+## Hello World
 
     어떤 컴퓨터 언어를 배우든 Hello, World! 부터 찍고 보는것은 국룰이다.
     아래에서 Hello, World 코드를 보면서 배울 수 있는 점들을 짚어보자.
