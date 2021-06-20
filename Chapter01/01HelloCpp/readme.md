@@ -13,7 +13,7 @@
 
 [1.4 IO 스트림](#1.4-io-스트림)
 
-[1.5 네임 스페이스 namespace](#1.5-네임-스페이스-namespace)
+[1.5 네임 스페이스 namespace](#1.5네임-스페이스-namespace)
 
 
 ***
