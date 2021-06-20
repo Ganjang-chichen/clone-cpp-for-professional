@@ -5,11 +5,16 @@
 
 ## 목차
 
-[1.1 Hello, World](1.1-Hello,-World!)
-[1.2 전처리에 대하여](1.2-전처리에-대하여)
-[1.3 main() 함수](1.3-main())
-[1.4 IO 스트림](1.4-IO-스트림)
-[1.5 네임 스페이스 namespace](네임-스페이스-namespace)
+[1.1 Hello, World](##1.1-Hello,-World!)
+
+[1.2 전처리에 대하여](##1.2-전처리에-대하여)
+
+[1.3 main() 함수](##1.3-main())
+
+[1.4 IO 스트림](##1.4-IO-스트림)
+
+[1.5 네임 스페이스 namespace](##네임-스페이스-namespace)
+
 
 ***
 
@@ -29,6 +34,7 @@
 
     필자의 경우 책만으로는 이해가 힘들어서 추가로 구글링을 하였다.
 <https://jhnyang.tistory.com/299>
+
     위 링크의 티스토리 블로그에 잘 설명되어있으니 위 전처리지시자에 대하여
     조금더 이해하고싶으면 참고하면 좋을 것 같다.
 
@@ -61,6 +67,7 @@
 
     아래의 예제 코드들을 보자.
 [namespace 예제 코드 main](./02namespace/app.cpp)
+
 [namespace 예제 코드 header](./02namespace/my_namespace.h)
 
     네임 스페이스는 헤더파일이나 코드파일 내에 다음과 같이 작성한다.
