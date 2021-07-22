@@ -32,6 +32,7 @@ int main() {
 	using namespace mycode_mk2;
 	//foo(); 이 경우 다시 같은 이름의 foo()함수가 2개 생겨서 스코프 지정을 해야한다.
 
+	
 
 	return 0;
 }
