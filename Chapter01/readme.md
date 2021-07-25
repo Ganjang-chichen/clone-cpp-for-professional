@@ -26,7 +26,7 @@
     어떤 컴퓨터 언어를 배우든 Hello, World! 부터 찍고 보는것은 국룰이다.
     아래에서 Hello, World 코드를 보면서 배울 수 있는 점들을 짚어보자.
 
-[헬로월드 코드](./01HelloCpp/HelloWorld.cpp)
+[헬로월드 코드](./01HelloCpp/01HelloCpp/HelloWorld.cpp)
 
 ## 1.2
 ## 전처리에 대하여
@@ -73,9 +73,9 @@
     이를 해결하기 위해 어디의 foo 이런식으로 만드는 것 이다.
 
     아래의 예제 코드들을 보자.
-[namespace 예제 코드 main](./02namespace/app.cpp)
+[namespace 예제 코드 main](./02namespace/02namespace/app.cpp)
 
-[namespace 예제 코드 header](./02namespace/my_namespace.h)
+[namespace 예제 코드 header](./02namespace/02namespace/my_namespace.h)
 
     네임 스페이스는 헤더파일이나 코드파일 내에 다음과 같이 작성한다.
 ```c++
@@ -169,6 +169,8 @@
     j = i << j; // 비트 i를 왼쪽으로 j 만큼 시프트
 
 ```
+
+[bit 연산 예제 코드](./03Enum/03Enum/enum.cpp)
 
 ## 1.7
 ## 데이터 타입
