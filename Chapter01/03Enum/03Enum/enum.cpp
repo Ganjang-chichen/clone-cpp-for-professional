@@ -20,6 +20,8 @@ int main() {
 
 	enum ChessPiece { King, Queen, Rook, Pawn }; // case 1
 
+	std::cout << "starting of default enum value is 0" << std::endl;
+
 	std::cout << "ChessPiece King  : " << ChessPiece::King << std::endl;
 	std::cout << "ChessPiece Queen : " << ChessPiece::Queen << std::endl;
 	std::cout << "ChessPiece Rook  : " << ChessPiece::Rook << std::endl;
@@ -42,6 +44,6 @@ int main() {
 	std::cout << "MyEnum value 2 : " << static_cast<int>(MyEnum::EnumValue2) << std::endl;
 	std::cout << "MyEnum value 3 : " << static_cast<int>(MyEnum::EnumValue3) << std::endl;
 
-
+	
 	return 0;
 }
