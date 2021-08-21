@@ -1,5 +1,5 @@
 
-# 챕터 1.1 C++ 기초
+# 챕터 1 c++ 기초
 
 ***
 
@@ -50,6 +50,12 @@
     아래에서 Hello, World 코드를 보면서 배울 수 있는 점들을 짚어보자.
 
 [헬로월드 코드](./01HelloCpp/01HelloCpp/HelloWorld.cpp)
+
+    STL(Standard Tamplate Library)
+    c++을 위한 라이브러리로써 알고리즘, 컨테이너, 함수자, 그리고 반족자라는 네가지의 구성요소를 제공한다.
+    더 자세한 사항은 아래 랑크의 위키 백과를 살펴보자.
+
+[STL 위키](https://ko.wikipedia.org/wiki/%ED%91%9C%EC%A4%80_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC)
 
 ## 1.2
 ## 전처리에 대하여
