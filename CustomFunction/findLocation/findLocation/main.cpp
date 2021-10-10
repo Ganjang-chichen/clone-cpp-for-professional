@@ -24,34 +24,14 @@ bool isMultiple(int num, int param) {
 	return isTrue;
 }
 
-class Node {
-private:
-	int idx = -1;
-	std::vector<Node> child;
 
-public:
-	Node(int _idx) {
-		idx = _idx;
-		
-	}
-	~Node(){}
-	
-	int getIdx() {
-		return idx;
-	}
 
-	Node getChild(int i) {
-		return child[i];
+void show_vector_int(std::vector<int> v) {
+	for (int i = 0; i < v.size(); i++) {
+		std::cout << v[i] << " ";
 	}
-
-	void add(Node ch) {
-		child.push_back(ch);
-	}
-	void erase(int i) {
-		child.erase(child.begin() + i);
-	}
-	
-};
+	std::cout << "\n";
+}
 
 void show_Vector_Map(std::vector<std::vector<int>> v) {
 	std::cout << "     ";
@@ -144,9 +124,9 @@ std::vector<std::vector<int>> make_weight_default(std::string map, int row, int 
 	return value;
 }
 
-std::vector<int> DFS(std::vector<std::vector<int>> weight, int start, int end) {
+std::vector<std::vector<int>> DFS(std::vector<std::vector<int>> weight, int start, int end) {
 	
-	std::vector<int> value;
+	std::vector<std::vector<int>> values;
 	std::vector<std::vector<int>> stack;
 	std::vector<std::vector<int>> temp_stack;
 	std::vector<int> start_v;
@@ -159,21 +139,13 @@ std::vector<int> DFS(std::vector<std::vector<int>> weight, int start, int end) {
 		}
 
 		for (int i = 0; i < stack.size(); i++) {
-
-			for (int j = 0; j < stack[i].size(); j++) {
-				std::cout << stack[i][j] << " ";
-			}
-
-			std::cout << "\n";
-		}
-		std::cout << "\n";
-
-		for (int i = 0; i < stack.size(); i++) {
 			int leaf = stack[i][stack[i].size() - 1];
 
 			for (int j = 0; j < weight.size(); j++) {
 				
 				if (weight[leaf][j] == 1) {
+					
+
 					bool isVisited = false;
 					for (int k = 0; k < stack[i].size(); k++) {
 						if (stack[i][k] == j) {
@@ -181,22 +153,36 @@ std::vector<int> DFS(std::vector<std::vector<int>> weight, int start, int end) {
 						}
 					}
 					if (!isVisited) {
+						
+						std::vector<int> temp;
+						temp.resize(stack[i].size());
+						std::copy(stack[i].begin(), stack[i].end(), temp.begin());
+						temp.push_back(j);
 
-						if (value.size() == 0 || value.size() > stack[i].size() + 1) {
-							std::vector<int> temp;
-							temp.resize(stack[i].size());
-							std::copy(stack[i].begin(), stack[i].end(), temp.begin());
-							temp.push_back(j);
+						if (j == end) {
 
-							if (j == end) {
-								value = temp;
+							if (values.size() == 0) {
+								values.push_back(temp);
 							}
-							else {
+							else if (values[0].size() == temp.size()) {
+								values.push_back(temp);
+							}
+							else if (values[0].size() > temp.size()) {
+								values.clear();
+								values.push_back(temp);
+							}
+
+						}
+						else {
+
+							if (values.size() == 0) {
 								temp_stack.push_back(temp);
 							}
-							
+							else if (values[0].size() > temp.size()) {
+								temp_stack.push_back(temp);
+							}
 						}
-						
+
 					}
 					
 				}
@@ -209,8 +195,9 @@ std::vector<int> DFS(std::vector<std::vector<int>> weight, int start, int end) {
 		temp_stack.clear();
 	}
 
-	return value;
+	return values;
 }
+
 
 int main() {
 
@@ -225,7 +212,7 @@ int main() {
 	
 	//vector<vector<int>> v = make_weight_default(input, 5, 8, '#');
 	//show_Vector_Map(v);
-	
+
 
 	string cmap = make_wall(input, 3, 4, '#');
 
@@ -234,11 +221,20 @@ int main() {
 	vector<vector<int>> v = make_weight_default(cmap, 5, 6, '#');
 	show_Vector_Map(v);
 
-	vector<int> test = DFS(v, 7, 22);
+	vector<vector<int>> test = DFS(v, 16, 7);
 
 	for (int i = 0; i < test.size(); i++) {
-		cout << test[i] << " ";
+		for (int j = 0; j < test[i].size(); j++) {
+			cout << test[i][j] << " ";
+		}
+		cout << "\n";
 	}
+
+	if (test.empty()) {
+		cout << "can not find load";
+	}
+
+	
 
 	/*************³¡*****************/
 	finish = clock();
