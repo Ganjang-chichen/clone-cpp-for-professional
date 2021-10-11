@@ -41,6 +41,8 @@
 
 [1.18 표준 라이브러리 vector iterator](#표준-라이브러리-vector-iterator)
 
+[1.19 미리 컴파일된헤더 stdafx PCH](#미리-컴파일된헤더-stdafx-PCH)
+
 ***
 
 ## 1.1
@@ -653,3 +655,46 @@
 ```
 
 [클래스 예제 코드](./10cppStdLib/10cppStdLib/main.cpp)
+
+## 1.19
+## 미리 컴파일된헤더 stdafx PCH
+
+    미리 컴파일된 헤더(PreCompiled Header)란?
+
+    헤더를 미리 컴파일해두는 것이다.
+    수정될 일이 없고 잘 없고, 사이즈가 큰 헤더파일에 대하여 사용하는 것을 추천한다.
+
+    VS studio 에서는 stdafx.h 파일을 모든 cpp 파일에 include해야 한다.
+
+    적용방법은 다음과 같다.
+
+[예제 main 코드](./11PCH/11PCH/main.cpp)
+[예제 stdafx.h 코드](./11PCH/11PCH/stdafx.h)
+[예제 stdafx.cpp 코드](./11PCH/11PCH/stdafx.cpp)
+
+1. 프로젝트->{프로젝트명}속성->구성 속성->C/C++->미리컴파일된 헤더->미리 컴파일된 헤더 사용(/Yu)설정.
+2. PCH필터 생성 및 해당 폴더 하위에 stdafx.h, stdafx.cpp 파일 생성.
+3. stdafx.cpp 파일 입력
+
+```c++
+
+#include "stdafx.h"
+
+```
+
+4. stdafx.h 파일 입력
+
+```c++
+
+/* 미리 컴파일할 헤더파일 인클루드
+Ex
+#include<window.h>
+#include<iostream>
+.
+.
+.
+*/
+
+```
+
+5. 4.까지 이상없이 하였음에도 불구하고 에러 발생 시, stdafx.cpp 우클릭->속성->구성 속성->C/C++->미리컴파일된 헤더->미리 컴파일된 헤더 만들기(/Yc)설정.
