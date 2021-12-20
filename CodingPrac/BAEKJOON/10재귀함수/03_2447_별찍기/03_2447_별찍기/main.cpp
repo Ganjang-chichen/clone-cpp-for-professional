@@ -1,5 +1,6 @@
-#include<iostream>
-#include<string>
+#pragma once
+
+#include "Map.h"
 
 int main() {
 
@@ -8,19 +9,22 @@ int main() {
 	int N;
 	cin >> N;
 
-	string map = "";
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
-			map += "*";
+	int k = 0;
+	while (true) {
+		if (pow(3, k) == N) {
+			break;
 		}
-		map += "\n";
+		k++;
 	}
+
+	Map test;
+
+	test.setK(k);
+	test.setMapSize(N);
+	test.makeMap();
+	test.setMap(k);
+	test.printMap();
 
 	return 0;
 }
 
-void erasePoint(std::string m, int N) {
-
-	erasePoint(m, N / 3);
-	return;
-}
