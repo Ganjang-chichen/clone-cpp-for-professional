@@ -9,7 +9,7 @@ void Map::setMapSize(int size) {
 	return;
 }
 
-void Map::makeMap() {
+void Map::makeMap() { // size = 9 -> map = " *********************************************************************************";
 	this->map = " ";
 	for (int i = 0; i < this->map_size * this->map_size; i++) {
 		map += "*";
@@ -17,7 +17,7 @@ void Map::makeMap() {
 	return;
 }
 
-int Map::getK() {
+int Map::getK() { // size = 9 -> k = 2
 	return this->k;
 }
 
@@ -25,6 +25,18 @@ void Map::setK(int k) {
 	this->k = k;
 	return;
 }
+
+// size = 9 -> map = " *********************************************************************************";
+/*
+* *********
+* *********
+* *********
+* *********
+* *********
+* *********
+* *********
+* *********
+*/
 
 void Map::printMap() {
 	for (int i = 1; i < this->map.size(); i++) {
@@ -36,10 +48,35 @@ void Map::printMap() {
 	return;
 }
 
+/*
+* eraseStar(1, 2);
+* * *******
+* *********
+* *********
+* *********
+* *********
+* *********
+* *********
+* *********
+*/
+
+
 void Map::eraseStar(int x, int y) {
 	this->map[(y - 1) * this->map_size + x] = ' ';
 	return;
 }
+
+/*
+* setEmptyBox(3, 3, 1);
+* *********
+* *   *****
+* *   *****
+* *   *****
+* *********
+* *********
+* *********
+* *********
+*/
 
 void Map::setEmptyBox(int x, int y, int size) {
 	for (int i = y - size; i <= y + size; i++) {

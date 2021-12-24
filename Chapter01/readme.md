@@ -54,8 +54,8 @@
 [헬로월드 코드](./01HelloCpp/01HelloCpp/HelloWorld.cpp)
 
     STL(Standard Tamplate Library)
-    c++을 위한 라이브러리로써 알고리즘, 컨테이너, 함수자, 그리고 반족자라는 네가지의 구성요소를 제공한다.
-    더 자세한 사항은 아래 랑크의 위키 백과를 살펴보자.
+    c++을 위한 라이브러리로써 알고리즘, 컨테이너, 함수자, 그리고 반복자라는 네가지의 구성요소를 제공한다.
+    더 자세한 사항은 아래 링크의 위키 백과를 살펴보자.
 
 [STL 위키](https://ko.wikipedia.org/wiki/%ED%91%9C%EC%A4%80_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC)
 
@@ -80,7 +80,7 @@
     코드에서 int main() 이라고 되어있는데 이는 반환값이 정수값이라는 것이다.
     이 정수값을 통해 프로그렘의 상태를 알려준다.
     Hello, World! 코드에서처럼 파라미터 값을 없이 사용할 수도 있지만,
-    int main(int argc, char* argv[]) 이렇게 두개의 팔라미터를 사용할수도 있다.
+    int main(int argc, char* argv[]) 이렇게 두개의 파라미터를 사용할수도 있다.
 
 ## 1.4
 ## IO 스트림
