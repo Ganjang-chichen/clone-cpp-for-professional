@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 
-
+void countBiggerPeople(std::vector<std::vector<int>>& peopleList);
 
 int main() {
 
@@ -14,44 +14,31 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		int weight, height;
 		cin >> weight >> height;
-		vector<int> peopleInfo = { weight, height };
+		vector<int> peopleInfo = { weight, height, 1 };
 		peopleList.push_back(peopleInfo);
 	}
 	
-	vector<vector<int>> orderedList;
+	
 
-	return;
+	countBiggerPeople(peopleList);
+
+	for (int i = 0; i < peopleList.size(); i++) {
+		cout << peopleList[i][2] << " ";
+	}
+
+	return 0;
 }
 
-void sortList(std::vector<std::vector<std::vector<int>>> &orderedList, std::vector<int> newList) {
-	
-	int point = 0;
-	while (true)
-	{
-		bool status = false;
-		for (int i = 0; i < orderedList[point].size(); i++) {
-			if (orderedList[point][i][0] > newList[0] && orderedList[point][i][1] > newList[1]) {
-				std::vector<std::vector<int>> temp;
-				temp.push_back(newList);
-				orderedList.insert(orderedList.begin() + point, temp);
-				
-				status = true;
-				break;
+void countBiggerPeople(std::vector<std::vector<int>> &peopleList) {
+
+	for (int i = 0; i < peopleList.size(); i++) {
+		for (int j = 0; j < peopleList.size(); j++) {
+
+			if (peopleList[i][0] < peopleList[j][0] && peopleList[i][1] < peopleList[j][1]) {
+				peopleList[i][2]++;
 			}
-			else if (orderedList[point][i][0] < newList[0] && orderedList[point][i][1] < newList[1]) {
-				point++;
-			}
-			else {
-				orderedList[point].push_back(newList);
-				status = true;
-				break;
-			}
-		}
-		if (!status) {
-			std::vector<std::vector<int>> temp;
-			temp.push_back(newList);
-			orderedList.push_back(temp);
 		}
 	}
 
+	return;
 }
