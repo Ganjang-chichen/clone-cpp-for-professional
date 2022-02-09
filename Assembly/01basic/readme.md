@@ -33,7 +33,7 @@
 
 # 예제 코드
 
-(코드)[./code/00useMove.asm]
+[코드](./code/00useMove.asm)
 
 <img src="./img/00register.png">
 
