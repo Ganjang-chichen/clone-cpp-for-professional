@@ -11,7 +11,7 @@
 
 (예제)[./code/regiNmem.asm]
 
-<img src="./img/section.png", name=".data, .bss 메모리 변수 값">
+<img src="./img/section.png" name=".data, .bss 메모리 변수 값">
 
 <img src="./img/00memory.png">
 
